@@ -1,6 +1,6 @@
 {
-  "name": "lit-element-starter-js",
-  "version": "0.0.0",
+  "name": "metherton-todo-list",
+  "version": "0.0.1",
   "description": "A simple web component",
   "main": "todo-list.js",
   "module": "todo-list.js",

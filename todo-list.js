@@ -34,6 +34,8 @@ export class TodoList extends LitElement {
 
   static get properties() {
     return {
+
+      todos: {type: Array},
       /**
        * The name to say "Hello" to.
        */
@@ -50,6 +52,7 @@ export class TodoList extends LitElement {
     super();
     this.name = 'World';
     this.count = 0;
+    this.todos = [];
   }
 
   render() {
@@ -58,13 +61,27 @@ export class TodoList extends LitElement {
       <button @click=${this._onClick} part="button">
         Click Count: ${this.count}
       </button>
-      <slot></slot>
+        <button @click=${this._onAddTodo} part="button">
+          Add todo
+        </button>
+      <!-- <slot></slot> -->
+      <ul>
+        <!-- use a map function to repeat a template -->
+        ${this.todos.map(todo => html`
+          <li>${todo.description}</li>
+        `)}
+      </ul>
     `;
   }
 
   _onClick() {
     this.count++;
   }
+
+    _onAddTodo() {
+      this.todos.push({description: "Wash car"});
+      this.requestUpdate();
+    }
 }
 
 window.customElements.define('todo-list', TodoList);
