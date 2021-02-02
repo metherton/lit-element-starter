@@ -1,0 +1,4 @@
+/node_modules/
+
+# only generated for size check
+todo-list.bundled.js
