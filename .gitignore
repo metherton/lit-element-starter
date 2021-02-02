@@ -1,4 +1,6 @@
 /node_modules/
+/.idea
+/.vscode
 
 # only generated for size check
 todo-list.bundled.js
